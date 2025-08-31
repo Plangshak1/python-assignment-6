@@ -110,70 +110,120 @@ def find_max(a, b, c):
 print(find_max(78, 43, 23))
 print(find_max(-45, 0.1, 0))
 
-"""
+
 # 8
+"""
 def task8_even_or_odd(n):
-    """
     Task 8:
     Write a function that accepts a number and returns
     "Even" if the number is even, and "Odd" if the number is odd.
-    """
     pass
+"""
+def even_or_odd(n):
+    return "Even" if n%2 == 0 else "Odd"
 
+print(even_or_odd(56))
+print(even_or_odd(-89))
+print(even_or_odd(1111))
 
 # 9
+"""
 def task9_count_vowels(word):
-    """
-    Task 9:
+   Task 9:
     Write a function that accepts a word as a parameter
     and returns the number of vowels (a, e, i, o, u) in the word.
     Example: count_vowels("apple") → 2
-    """
     pass
+"""
+
+def_count_vovels(word):
+    vowels = (a, e, i, o, u)    
+    count = 0
+    for char in word.lower():
+        if char in vowels:
+        count += 1
+    return count
+
+print(count_vowels(apple))
+print(count_vowels(nostalgia))
+print(count_vowels(mercedez))
 
 
 # 10
+"""
 def task10_multiply_list(numbers):
-    """
     Task 10:
     Write a function that accepts a list of numbers as a parameter
     and returns the product of all the numbers in the list.
     Example: multiply_list([1, 2, 3, 4]) → 24
-    """
     pass
+"""
+def multiply_list(numbers):
+    product = 1
+    for num in numbers:
+        product *= num
+    return product
 
-
+print(multiply_list(56, 2, 3))
+print(multiply_list(3, -3, 32))
+print(multiply_list([]))
+"""
 # 11
 def task11_reverse_string(text):
-    """
-    Task 11:
+Task 11:
     Write a function that accepts a string as a parameter
     and returns the string reversed.
     Example: reverse_string("hello") → "olleh"
-    """
     pass
+"""
+def reverse_string(text):
+    return text[::-1]
+
+print(reverse_string(tunde ednut))
+print(reverse_string(manchester united))
 
 
 # 12
+"""
 def task12_is_prime(n):
-    """
+   "
     Task 12:
     Write a function that accepts a number as a parameter
     and returns True if the number is prime, otherwise False.
-    """
     pass
-
+"""
+ def is_prime(n):
+    if n <= 1:
+        return False
+    if n == 2:
+        return True
+    if n % 2 == 0:
+        return False
+    # Check divisibility up to sqrt(n)
+    for i in range(3, int(n**0.5) + 1, 2):
+        if n % i == 0:
+            return False
+    return True
 
 # 13
+"""
 def task13_scope_demo():
-    """
+
     Task 13:
     Demonstrate local and global scope.
     Create a global variable, and then inside a function,
     create a local variable with the same name. Print both
     to show how local and global scope works.
-    """
     pass
+"""
+message = "I am a global scope"
+
+def scope_demo():
+    message = "I am a local variable"
+    print("Inside the function:", message)
+
+scope_demo()
+print("Outside the function:", message)
 
 
 # 14
@@ -188,15 +238,20 @@ def task14_sum_list(numbers):
 
 
 # 15
+"""
 def task15_average_of_list(numbers):
-   
-    Task 15:
+   Task 15:
     Write a function that accepts a list of numbers
     and returns the average.
     Formula: average = sum of numbers / count of numbers
-    """
-    pass
-
+   pass
+"""
+def average_of_list(numbers):
+    if len(numbers) == 0:
+        return 0
+    average = sum(numbers) / len(numbers)
+    return average
+print(average_of_list([34, 23, 43, 24, 32, 34, 42]))
 
 # 16
 def task16_factorial(n):
