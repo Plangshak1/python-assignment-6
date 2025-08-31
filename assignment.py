@@ -74,12 +74,12 @@ def task5_perimeter_of_square(side):
     Formula: perimeter = 4 * side
     pass
 """
-def perimeter_of_sqaure(side):
+def perimeter_of_square(side):
     perimeter = 4 * side
     return perimeter
 
-print(perimeter(9))
-print(perimeter(54))
+print(perimeter_of_square(9))
+print(perimeter_of_square(54))
 
 
 
@@ -90,7 +90,7 @@ print(perimeter(54))
     Formula: (celsius * 9/5) + 32
    pass
 """
-def_celcius_to_fahrenheit(celcius):
+def celcius_to_fahrenheit(celcius):
     cf = (celcius * 9/5) + 32
     return cf
 print(celcius_to_fahrenheit(99))
@@ -137,17 +137,17 @@ def task9_count_vowels(word):
     pass
 """
 
-def_count_vovels(word):
-    vowels = (a, e, i, o, u)    
+def count_vowels(word):
+    vowels = ("a", "e", "i", "o", "u")    
     count = 0
     for char in word.lower():
         if char in vowels:
-        count += 1
+            count += 1
     return count
 
-print(count_vowels(apple))
-print(count_vowels(nostalgia))
-print(count_vowels(mercedez))
+print(count_vowels("apple"))
+print(count_vowels("nostalgia"))
+print(count_vowels("mercedez"))
 
 
 # 10
@@ -165,9 +165,8 @@ def multiply_list(numbers):
         product *= num
     return product
 
-print(multiply_list(56, 2, 3))
-print(multiply_list(3, -3, 32))
-print(multiply_list([]))
+print(multiply_list([56, 2, 3]))
+print(multiply_list([3, -3, 32]))
 """
 # 11
 def task11_reverse_string(text):
@@ -180,8 +179,8 @@ Task 11:
 def reverse_string(text):
     return text[::-1]
 
-print(reverse_string(tunde ednut))
-print(reverse_string(manchester united))
+print(reverse_string("tunde ednut"))
+print(reverse_string("manchester united"))
 
 
 # 12
@@ -193,7 +192,7 @@ def task12_is_prime(n):
     and returns True if the number is prime, otherwise False.
     pass
 """
- def is_prime(n):
+def is_prime(n):
     if n <= 1:
         return False
     if n == 2:
@@ -240,7 +239,8 @@ def list_sum(numbers):
     for num in numbers:
         total += num
     return total
-print(list_sum(34, 23, 78, 12))
+
+print(list_sum([34, 23, 78, 12]))
 
 
 # 15
@@ -309,15 +309,15 @@ def task18_convert_minutes_to_hours(minutes):
     Example: 130 minutes → "2 hour(s) 10 minute(s)"
     pass
 """
-def convert_minutes_to_hours(minutes):
-    def convert_minutes(total_minutes):
+
+def convert_minutes(total_minutes):
     hours = total_minutes // 60     
     minutes = total_minutes % 60   
     return f"{hours} hour(s) {minutes} minute(s)"
 
-print(convert_minutes_to hours(230))
-print(convert_minutes_to hours(780))
-print(convert_minutes_to_hours(45))
+print(convert_minutes(230))
+print(convert_minutes(780))
+print(convert_minutes(45))
 
 
 # 19
@@ -330,7 +330,7 @@ def task19_find_min(numbers):
     """
 def find_smallest(numbers):
     if len(numbers) == 0:
-    return None  
+        return None  
 
     smallest = numbers[0] 
     for num in numbers:
@@ -354,9 +354,9 @@ def simple_interest(principal, rate, time):
     simple_interest = (principal * rate * time) / 100
     return simple_interest
 
-print(calculate_simple_interest(1000, 5, 2))   
-print(calculate_simple_interest(5000, 7.5, 3)) 
-print(calculate_simple_interest(1200, 10, 1))  
+print(simple_interest(1000, 5, 2))   
+print(simple_interest(5000, 7.5, 3)) 
+print(simple_interest(1200, 10, 1))  
 
 #21
 """
@@ -366,7 +366,7 @@ It should accept two numbers and an operation (+, -, *, /)
 and return the result.
 Example: calculator(4, 2, "+") → 6
 """
-def simple_calculator(a, b):
+def simple_calculator(a, b, operation):
     if operation == "+":
         return a + b
     elif operation == "-":
@@ -380,14 +380,14 @@ def simple_calculator(a, b):
     else:
         return "Error: Invalid operation"
 
-print(calculator(13, 2, "+")) 
-print(calculator(1, 2, "-")) 
-print(calculator(7, 2, "*")) 
-print(calculator(10, 2, "/")) 
+print(simple_calculator(13, 2, "+")) 
+print(simple_calculator(1, 2, "-")) 
+print(simple_calculator(7, 2, "*")) 
+print(simple_calculator(10, 2, "/")) 
 
 
-# task22_string_length(text):
-    """
+# task22
+"""
     Task 22:
     Write a function that accepts a string
     and returns its length without using len().
@@ -395,7 +395,7 @@ print(calculator(10, 2, "/"))
 """
 def string_length(text):
     count = 0
-    for _ in text
+    for _ in text:
         count =+ 1
     return count
 print(string_length("sesko"))
@@ -452,20 +452,21 @@ print(swap_values(56, 34))
 print(swap_values(69, 96))
 
 # 25
-    """
+"""
     Task 25:
     Create a counter function that uses a global variable.
     Each time the function is called, it should increase
     the counter by 1 and print the current count.
     This demonstrates modifying global variables inside functions.
-    """
+"""
+counter = 0
 def scope_counter():
-    global counter   # tell Python we want to modify the global variable
+    global counter   
     counter += 1
     print("Current count:", counter)
-print(increment_counter())  
-print(increment_counter())
-print(increment_counter()) 
+scope_counter()  
+scope_counter()
+scope_counter() 
 
 
 # ================================
@@ -473,8 +474,8 @@ print(increment_counter())
 # ================================
 
 # 26
-#def task26_calculate_bmi(weight, height):
-    """
+"""
+def task26_calculate_bmi(weight, height):
     Task 26:
     Write a function that accepts weight (kg) and height (m),
     and returns the Body Mass Index (BMI).
@@ -487,8 +488,8 @@ def calculate_bmi(weight, height):
         return "Error: Height must be greater than 0"
     bmi = weight / (height ** 2)
     return round(bmi, 2)
-print(calculate_bmi(56, 6.4)
-print(calculate_bmi(79, 5.7)
+print(calculate_bmi(56, 6))
+print(calculate_bmi(79, 5))
 
 
 # 27
@@ -500,7 +501,7 @@ def task27_discounted_price(price, discount_percent):
     Example: discounted_price(1000, 20) → 800
     pass
 """
-def discounted_price(price, discounted_percent):
+def discounted_price(price, discount_percent):
     if discount_percent < 0 or discount_percent > 100:
         return "Error: Discount must be between 0 and 100"
     
@@ -534,10 +535,10 @@ def movie_ticket_price(age):
         price = 600
     
     return f"Your ticket price is {price}"
-print(ticket_price(18))   
-print(ticket_price(22))  
-print(ticket_price(10))  
-print(ticket_price(65))  
+print(movie_ticket_price(18))   
+print(movie_ticket_price(22))  
+print(movie_ticket_price(10))  
+print(movie_ticket_price(65))  
 
 # 29
 """
@@ -547,14 +548,14 @@ def task29_shopping_total(prices):
     and returns the total cost of all items.
     pass
 """
-def shopping_total(prices)
+def shopping_total(prices):
     total = 0
     for price in prices:
         total += price
     return f"The total cost is {total}"
-print(total_cost([200, 300, 150]))   
-print(total_cost([1000, 2500, 500])) 
-print(total_cost([]))                
+print(shopping_total([200, 300, 150]))   
+print(shopping_total([1000, 2500, 500])) 
+print(shopping_total([]))                
 
 
 # 30
@@ -565,12 +566,12 @@ def task30_convert_to_seconds(hours, minutes, seconds):
     and converts the entire time to total seconds.
     Example: 1h 1m 1s → 3661 seconds
     """
-def convert_to_second(hours, minutes, seconds): 
+def convert_to_seconds(hours, minutes, seconds): 
     total_seconds = (hours * 3600) + (minutes * 60) + seconds
     return f"The total time in seconds is {total_seconds}"
-print(time_to_seconds(4, 1, 1))   
-print(time_to_seconds(1, 30, 0))  
-print(time_to_seconds(0, 45, 15)) 
+print(convert_to_seconds(4, 1, 1))   
+print(convert_to_seconds(1, 30, 0))  
+print(convert_to_seconds(0, 45, 15)) 
 
 
 # 31
@@ -633,9 +634,9 @@ def word_count(sentence):
     words = sentence.split()
     return len(words)
 
-print(count_words("last weekend was short"))           
-print(count_words("Hello, how are you?"))     
-print(count_words(""))
+print(word_count("last weekend was short"))           
+print(word_count("Hello, how are you?"))     
+print(word_count(""))
 
 
 # 34
@@ -703,7 +704,7 @@ def task37_convert_currency(amount, rate):
     Example: convert_currency(100, 1500) → 150000
     pass
 """
-def task37_convert_currency(amount, rate):
+def convert_currency(amount, rate):
     return amount * rate
 
 print(convert_currency(100, 1500)) 
@@ -836,13 +837,7 @@ def task44_calculate_age(current_year, birth_year):
     Example: calculate_age(2025, 2000) → 25
     pass
 """
-def task44_calculate_age(current_year, birth_year):
-    """
-    Task 44:
-    Write a function that accepts current year and birth year,
-    and returns the age.
-    Example: calculate_age(2025, 2000) → 25
-    """
+def calculate_age(current_year, birth_year):
     return current_year - birth_year
 
 print(calculate_age(2025, 2000))  
@@ -857,7 +852,7 @@ def task45_salary_after_tax(salary, tax_rate=0.15):
     Example: salary_after_tax(100000) → 85000
     pass
 """
-def salary_after_tax(salary, tax_rate=0.15)
+def salary_after_tax(salary, tax_rate=0.15):
     return salary - (salary * tax_rate)
 
 print(salary_after_tax(100000, 0.12))       
@@ -873,13 +868,13 @@ def task46_water_bill(units):
     - Beyond 50 units → 100 per unit
     pass
 """
-def water_bill(units)
+def water_bill(units):
     if units <= 0:
-            return 0
-        if units <= 30:
-            return units * 50
-        elif units <= 50:
-            return (30 * 50) + (units - 30) * 75
+        return 0
+    if units <= 30:
+        return units * 50
+    elif units <= 50:
+        return (30 * 50) + (units - 30) * 75
     else:
         return (30 * 50) + (20 * 75) + (units - 50) * 100
 
@@ -897,7 +892,7 @@ def task47_find_longest_word(sentence):
     Example: "I love programming" → "programming"
     pass
 """
-def task47_find_longest_word(sentence):
+def find_longest_word(sentence):
     words = sentence.split()
     if not words:
         return ""
@@ -918,7 +913,7 @@ def task48_banking_withdraw(balance, withdraw_amount):
     - Otherwise return "Insufficient funds"
     pass
 """
-def banking_withdraw(balance, withdraw_amount)
+def banking_withdraw(balance, withdraw_amount):
     if withdraw_amount <= balance:
         return balance - withdraw_amount
     else:
@@ -940,7 +935,7 @@ def task49_calculate_grade_point(score):
     - <40 → 0
     pass
 """
-def calculate_grade_point(score)
+def calculate_grade_point(score):
     if score >= 70:
         return 5
     elif score >= 60:
@@ -973,15 +968,15 @@ def task50_weather_advice(temperature, raining):
     - Else → "Weather is fine"
     pass
 """
-def weather_advice(temperature, raining)
+def weather_advice(temperature, raining):
     if raining:
-            return "Take an umbrella"
-        elif temperature > 30:
-            return "Wear light clothes"
-        elif temperature < 15:
-            return "Wear a jacket"
-        else:
-            return "Weather is fine"
+        return "Take an umbrella"
+    elif temperature > 30:
+        return "Wear light clothes"
+    elif temperature < 15:
+        return "Wear a jacket"
+    else:
+        return "Weather is fine"
 
 print(weather_advice(32, False)) 
 print(weather_advice(10, False))   
