@@ -25,11 +25,12 @@ def task2_square_number(n):
     Write a function that accepts a number and returns its square.
     Example: square_number(5) → 25
     """
-square_number(num):
+
+def square_number(num):
     return num * num
 
 print(square_number(3))
-print(square_number(-2)
+print(square_number(2))
 print(square_number(0))
 
 
@@ -56,7 +57,7 @@ def task4_area_of_rectangle(length, width):
     Formula: area = length * width
     pass
 """
-def area_of _rectangle(length, width):
+def area_of_rectangle(length, width):
     area = length * width
     return area
 
@@ -77,7 +78,7 @@ def perimeter_of_sqaure(side):
     perimeter = 4 * side
     return perimeter
 
-print(perimer(9))
+print(perimeter(9))
 print(perimeter(54))
 
 
@@ -573,152 +574,268 @@ print(time_to_seconds(0, 45, 15))
 
 
 # 31
+"""
 def task31_find_median(numbers):
-    """
     Task 31:
     Write a function that accepts a list of numbers
     and returns the median value.
     (Hint: Sort the list first, then handle odd/even length cases.)
     """
-    pass
-
+def find_median(numbers):
+    if not numbers:
+        return None
+    
+    sorted_numbers = sorted(numbers)
+    n = len(sorted_numbers)
+    
+    if n % 2 != 0:
+        return sorted_numbers[n // 2]
+    
+    middle_right = n // 2
+    middle_left = middle_right - 1
+    return (sorted_numbers[middle_left] + sorted_numbers[middle_right]) / 2
+print(find_median([1, 3, 7, 6, 8, 9, 5]))  
+print(find_median([1, 2, 3, 4, 5, 6, 7])) 
 
 # 32
+"""
 def task32_parking_fee(hours):
-    """
-    Task 32:
+   Task 32:
     Write a function that calculates parking fees:
     - First 2 hours: 200 Naira flat
     - Every additional hour: 100 Naira
     Example: parking_fee(5) → 200 + 3*100 = 500
-    """
-    pass
-
+   pass
+"""
+def parking_fee(hours):
+    if hours < 0:
+        return 0
+    if hours <= 2:
+        return 200
+    
+    additional_hours = hours - 2
+    return 200 + (additional_hours * 100)
+print(parking_fee(1))  
+print(parking_fee(2))  
+print(parking_fee(3))  
+print(parking_fee(5))  
+print(parking_fee(-1)) 
 
 # 33
+"""
 def task33_word_count(sentence):
-    """
-    Task 33:
+   Task 33:
     Write a function that accepts a sentence
     and returns the number of words in it.
     Example: "I love Python" → 3
     """
-    pass
+def word_count(sentence):
+    words = sentence.split()
+    return len(words)
+
+print(count_words("last weekend was short"))           
+print(count_words("Hello, how are you?"))     
+print(count_words(""))
 
 
 # 34
+"""
 def task34_capitalize_names(names):
-    """
     Task 34:
     Write a function that accepts a list of names in lowercase
     and returns a new list with each name capitalized.
     Example: ["john", "mary"] → ["John", "Mary"]
-    """
     pass
+"""
+def capitalize_names(names):
+    return [name.capitalize() for name in names]
+
+print(capitalize_names(["john", "mbuemo", "onana", "mary"]))  
+print(capitalize_names(["alice", "pele", "cr7" "bob"]))
 
 
 # 35
+"""
 def task35_student_pass_fail(score):
-    """
     Task 35:
     Write a function that accepts a student's score
     and returns "Pass" if score >= 50, otherwise "Fail".
-    """
     pass
+"""
+def student_pass_fail(score):
+    return "Pass" if score >= 50 else "Fail"
 
+print(student_pass_fail(75)) 
+print(student_pass_fail(40)) 
 
 # 36
+"""
 def task36_calculate_fine(days_late):
-    """
-    Task 36:
+   Task 36:
     Write a function that calculates library book fine:
     - First 5 days: 20 per day
     - 6–10 days: 50 per day
     - Beyond 10 days: 100 per day
     Example: calculate_fine(7) → 5*20 + 2*50 = 200
     """
-    pass
+   
+def calculate_fine(days_late):
+    if days_late <= 0:
+        return 0
+    if days_late <= 5:
+        return days_late * 20
+    elif days_late <= 10:
+        return (5 * 20) + (days_late - 5) * 50
+    else:
+        return (5 * 20) + (5 * 50) + (days_late - 10) * 100
+
+print(calculate_fine(0))
+print(calculate_fine(3))
+print(calculate_fine(7))
 
 
 # 37
+"""
 def task37_convert_currency(amount, rate):
-    """
     Task 37:
     Write a function that converts money from one currency to another
     using a given conversion rate.
     Example: convert_currency(100, 1500) → 150000
-    """
     pass
+"""
+def task37_convert_currency(amount, rate):
+    return amount * rate
+
+print(convert_currency(100, 1500)) 
+print(convert_currency(50, 800)) 
+
 
 
 # 38
+"""
 def task38_gas_station_bill(liters, price_per_liter):
-    """
     Task 38:
     Write a function that accepts the number of liters purchased
     and the price per liter, then returns the total cost.
-    """
     pass
+"""
+def gas_station_bill(liters, price_per_liter):
+    return liters * price_per_liter
 
+print(gas_station_bill(10, 700))  
+print(gas_station_bill(25, 650))  
 
 # 39
+"""
 def task39_is_leap_year(year):
-    """
     Task 39:
     Write a function that accepts a year and returns True if it is a leap year,
     otherwise False.
     Rule: Year divisible by 4 → leap year, but divisible by 100 → not leap,
     unless divisible by 400.
-    """
-    pass
+     pass
+"""
+def is_leap_year(year):
+    if year % 400 == 0:
+        return True
+    elif year % 100 == 0:
+        return False
+    elif year % 4 == 0:
+        return True
+    else:
+        return False
 
+print(is_leap_year(2000)) 
+print(is_leap_year(1900)) 
+print(is_leap_year(2024)) 
+print(is_leap_year(2023)) 
 
 # 40
+"""
 def task40_password_strength(password):
-    """
-    Task 40:
-    Write a function that checks password strength:
-    - Length >= 8
-    - Contains at least one digit
-    - Contains at least one uppercase letter
-    Return "Strong" if all conditions are met, otherwise "Weak".
-    """
-    pass
-
+    has_digit = any(ch.isdigit() for ch in password)
+    has_upper = any(ch.isupper() for ch in password)
+    if len(password) >= 8 and has_digit and has_upper:
+        return "Strong"
+    return "Weak"
+"""
+def password_strength(password):
+    has_digit = any(ch.isdigit() for ch in password)
+    has_upper = any(ch.isupper() for ch in password)
+    if len(password) >= 8 and has_digit and has_upper:
+        return "Strong"
+    return "Weak"
+print(password_strength("kass1234")) 
+print(password_strength("kasongo")) 
+print(password_strength("PASSword")) 
+print(password_strength("Strong1"))  
 
 # 41
+"""
 def task41_shirt_order(quantity, price_per_shirt, discount_threshold=10, discount_rate=0.1):
-    """
     Task 41:
     Write a function to calculate the total price of a shirt order.
     - If quantity >= discount_threshold, apply discount_rate.
     Example: shirt_order(12, 2000) → discounted price
-    """
     pass
+"""
+def shirt_order(quantity, price_per_shirt, discount_threshold=10, discount_rate=0.1):
+    total = quantity * price_per_shirt
+    if quantity >= discount_threshold:
+        total -= total * discount_rate
+    return total
 
+print(shirt_order(5, 2000))  
+print(shirt_order(12, 2000)) 
 
 # 42
+"""
 def task42_find_mode(numbers):
-    """
     Task 42:
     Write a function that finds the mode (most frequent number) in a list.
     If there are multiple modes, return any one of them.
-    """
     pass
+"""
+def find_mode(numbers):
+    from collections import Counter
+    if not numbers:
+        return None
+    count = Counter(numbers)
+    return count.most_common(1)[0][0]
+
+print(find_mode([1, 2, 2, 3, 4]))      
+print(find_mode([7, 7, 8, 8, 9]))      
+print(find_mode([]))                   
 
 
 # 43
+"""
 def task43_student_average(scores):
-    """
     Task 43:
     Write a function that accepts a dictionary of subject:score
     and returns the student's average score.
     Example: {"math": 80, "english": 70} → 75.0
-    """
-    pass
+     pass
+"""
+def student_average(scores):
+    if not scores:
+        return 0
+    return sum(scores.values()) / len(scores)
+
+print(student_average({"math": 80, "english": 70, "sciences": 45}))  
+print(student_average({"science": 90, "art": 60, "tech": 56}))   
+print(student_average({}))                  
 
 
 # 44
+"""
+def task44_calculate_age(current_year, birth_year):
+    Task 44:
+    Write a function that accepts current year and birth year,
+    and returns the age.
+    Example: calculate_age(2025, 2000) → 25
+    pass
+"""
 def task44_calculate_age(current_year, birth_year):
     """
     Task 44:
@@ -726,56 +843,93 @@ def task44_calculate_age(current_year, birth_year):
     and returns the age.
     Example: calculate_age(2025, 2000) → 25
     """
-    pass
+    return current_year - birth_year
+
+print(calculate_age(2025, 2000))  
+print(calculate_age(2025, 1990))  
 
 
 # 45
+"""
 def task45_salary_after_tax(salary, tax_rate=0.15):
-    """
-    Task 45:
+   Task 45:
     Write a function that calculates net salary after deducting tax.
     Example: salary_after_tax(100000) → 85000
-    """
     pass
+"""
+def salary_after_tax(salary, tax_rate=0.15)
+    return salary - (salary * tax_rate)
 
+print(salary_after_tax(100000, 0.12))       
+print(salary_after_tax(50000, 0.2))
 
 # 46
+"""
 def task46_water_bill(units):
-    """
     Task 46:
     Write a function to calculate water bill based on units:
     - First 30 units → 50 per unit
     - Next 20 units → 75 per unit
     - Beyond 50 units → 100 per unit
-    """
     pass
+"""
+def water_bill(units)
+    if units <= 0:
+            return 0
+        if units <= 30:
+            return units * 50
+        elif units <= 50:
+            return (30 * 50) + (units - 30) * 75
+    else:
+        return (30 * 50) + (20 * 75) + (units - 50) * 100
+
+print(water_bill(20)) 
+print(water_bill(40))  
+print(water_bill(60))
 
 
 # 47
+"""
 def task47_find_longest_word(sentence):
-    """
     Task 47:
     Write a function that accepts a sentence
     and returns the longest word in it.
     Example: "I love programming" → "programming"
-    """
     pass
+"""
+def task47_find_longest_word(sentence):
+    words = sentence.split()
+    if not words:
+        return ""
+    return max(words, key=len)
+
+
+print(find_longest_word("I love programming"))     
+print(find_longest_word("Python is fun"))   
+print(find_longest_word(""))
 
 
 # 48
+"""
 def task48_banking_withdraw(balance, withdraw_amount):
-    """
     Task 48:
     Write a function to simulate ATM withdrawal.
     - If withdraw_amount <= balance, return new balance
     - Otherwise return "Insufficient funds"
-    """
     pass
+"""
+def banking_withdraw(balance, withdraw_amount)
+    if withdraw_amount <= balance:
+        return balance - withdraw_amount
+    else:
+        return "Insufficient funds"
 
+print(banking_withdraw(5000, 2000))  
+print(banking_withdraw(3000, 5000))
 
 # 49
+"""
 def task49_calculate_grade_point(score):
-    """
     Task 49:
     Write a function that converts score (0–100) into grade points:
     - 70–100 → 5
@@ -784,20 +938,52 @@ def task49_calculate_grade_point(score):
     - 45–49 → 2
     - 40–44 → 1
     - <40 → 0
-    """
     pass
+"""
+def calculate_grade_point(score)
+    if score >= 70:
+        return 5
+    elif score >= 60:
+        return 4
+    elif score >= 50:
+        return 3
+    elif score >= 45:
+        return 2
+    elif score >= 40:
+        return 1
+    else:
+        return 0
+
+print(calculate_grade_point(85))
+print(calculate_grade_point(65)) 
+print(calculate_grade_point(52)) 
+print(calculate_grade_point(47)) 
+print(calculate_grade_point(42)) 
+print(calculate_grade_point(30)) 
 
 
 # 50
+"""
 def task50_weather_advice(temperature, raining):
-    """
     Task 50:
     Write a function that gives advice based on weather:
     - If raining → "Take an umbrella"
     - Else if temperature > 30 → "Wear light clothes"
     - Else if temperature < 15 → "Wear a jacket"
     - Else → "Weather is fine"
-    """
-   pass
-
+    pass
 """
+def weather_advice(temperature, raining)
+    if raining:
+            return "Take an umbrella"
+        elif temperature > 30:
+            return "Wear light clothes"
+        elif temperature < 15:
+            return "Wear a jacket"
+        else:
+            return "Weather is fine"
+
+print(weather_advice(32, False)) 
+print(weather_advice(10, False))   
+print(weather_advice(20, False))   
+print(weather_advice(25, True))    
