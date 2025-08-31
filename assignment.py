@@ -1,81 +1,116 @@
 # assignment 
 # ======================
 # FUNCTIONS & SCOPE TASKS
-# ======================
+# ==========
 
-# 1
-def task1_sum_of_two_numbers(a, b):
-    """
-    Task 1:
-    Write a function that accepts two numbers (a and b) as parameters
-    and returns their sum.
-    Test the function by calling it with different numbers.
-    """
-    pass
+"""
+Task 1:
+Write a function that accepts two numbers (a and b) as parameters
+and returns their sum.
+Test the function by calling it with different numbers.
+"""
+def sum_of_two_numbers(a, b):
+    return a + b
+
+print(sum_of_two_numbers(3, 4))
+print(sum_of_two_numbers(-2, 5))
+print(sum_of_two_numbers(0, 0))  
+print(sum_of_two_numbers(1.5, 2.5))
 
 
 # 2
+"""
 def task2_square_number(n):
-    """
     Task 2:
     Write a function that accepts a number and returns its square.
     Example: square_number(5) → 25
     """
-    pass
+square_number(num):
+    return num * num
+
+print(square_number(3))
+print(square_number(-2)
+print(square_number(0))
 
 
-# 3
-def task3_greet_user(name):
-    """
+"""
+#def task3_greet_user(name):
     Task 3:
     Write a function that accepts a person's name as a parameter
     and prints a greeting message like: "Hello, John!"
-    """
     pass
+"""
 
+def greet_person(name):
+    print(f"Hello, {name}!")
+
+greet_person("John")
+greet_person("")
 
 # 4
+"""
 def task4_area_of_rectangle(length, width):
-    """
-    Task 4:
+   Task 4:
     Write a function that accepts the length and width of a rectangle
     and returns its area.
     Formula: area = length * width
-    """
     pass
+"""
+def area_of _rectangle(length, width):
+    area = length * width
+    return area
+
+print(area_of_rectangle(8, 7))
+print(area_of_rectangle(9, 5))
 
 
 # 5
+"""
 def task5_perimeter_of_square(side):
-    """
-    Task 5:
+   Task 5:
     Write a function that accepts the side length of a square
     and returns its perimeter.
     Formula: perimeter = 4 * side
-    """
     pass
+"""
+def perimeter_of_sqaure(side):
+    perimeter = 4 * side
+    return perimeter
+
+print(perimer(9))
+print(perimeter(54))
+
 
 
 # 6
-def task6_celsius_to_fahrenheit(celsius):
-    """
-    Task 6:
+"""def task6_celsius_to_fahrenheit(celsius):
+   Task 6:
     Write a function that converts a temperature from Celsius to Fahrenheit.
     Formula: (celsius * 9/5) + 32
-    """
-    pass
+   pass
+"""
+def_celcius_to_fahrenheit(celcius):
+    cf = (celcius * 9/5) + 32
+    return cf
+print(celcius_to_fahrenheit(99))
+print(celcius_to_fahrenheit(-16))
 
 
 # 7
+"""
 def task7_find_max(a, b, c):
-    """
     Task 7:
     Write a function that accepts three numbers as parameters
     and returns the largest number.
-    """
     pass
+"""
+def find_max(a, b, c):
+    return max(a, b, c)
 
+print(find_max(78, 43, 23))
+print(find_max(-45, 0.1, 0))
 
+"""
 # 8
 def task8_even_or_odd(n):
     """
@@ -154,7 +189,7 @@ def task14_sum_list(numbers):
 
 # 15
 def task15_average_of_list(numbers):
-    """
+   
     Task 15:
     Write a function that accepts a list of numbers
     and returns the average.
@@ -566,4 +601,6 @@ def task50_weather_advice(temperature, raining):
     - Else if temperature < 15 → "Wear a jacket"
     - Else → "Weather is fine"
     """
-    pass
+   pass
+
+"""
