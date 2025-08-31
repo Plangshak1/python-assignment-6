@@ -254,60 +254,108 @@ def average_of_list(numbers):
 print(average_of_list([34, 23, 43, 24, 32, 34, 42]))
 
 # 16
+"""
 def task16_factorial(n):
-    """
-    Task 16:
+   Task 16:
     Write a function that accepts a number and returns its factorial
     using a loop (not recursion).
     Example: factorial(5) → 120
     """
-    pass
+def factorial(n):
+    if n < 0:
+        return "Factorial is not defined for negative numbers"
+    result = 1
+    for i in range(1, n + 1):
+        result *= i  
+    return result
+
+print(factorial(5))  
+print(factorial(0))
+
 
 
 # 17
+"""
 def task17_palindrome_check(word):
-    """
+   
     Task 17:
     Write a function that checks if a word is a palindrome.
     A palindrome reads the same forwards and backwards.
     Example: palindrome_check("madam") → True
     """
-    pass
+def palindrom_check(word):
+    word = word.lower()
+    return word == word[::-1]
+
+print(palindrom_check(tundeednut))
+print(palindrom_check(madam))
+print(palindrom_check(pad))
+print(palindrom_check(racecar))
+print(palindrom_check(level))
 
 
 # 18
+"""
 def task18_convert_minutes_to_hours(minutes):
-    """
     Task 18:
     Write a function that accepts minutes as input
     and converts it into hours and minutes.
     Example: 130 minutes → "2 hour(s) 10 minute(s)"
-    """
     pass
+"""
+def convert_minutes_to_hours(minutes):
+    def convert_minutes(total_minutes):
+    hours = total_minutes // 60     
+    minutes = total_minutes % 60   
+    return f"{hours} hour(s) {minutes} minute(s)"
+
+print(convert_minutes_to hours(230))
+print(convert_minutes_to hours(780))
+print(convert_minutes_to_hours(45))
 
 
 # 19
+"""
 def task19_find_min(numbers):
-    """
     Task 19:
     Write a function that accepts a list of numbers
     and returns the smallest number.
     Do not use Python's built-in min() function.
     """
-    pass
+def find_smallest(numbers):
+    if len(numbers) == 0:
+    return None  
 
+    smallest = numbers[0] 
+    for num in numbers:
+        if num < smallest:
+            smallest = num
+    return smallest
+print(find_smallest([34, 23, 43, 24, 32, 34, 42]))  
+print(find_smallest([-5, -10, 0, 15]))     
+print(find_smallest([100]))                        
+print(find_smallest([]))                           
 
 # 20
+"""
 def task20_simple_interest(principal, rate, time):
-    """
     Task 20:
     Write a function that calculates simple interest.
     Formula: (principal * rate * time) / 100
-    """
     pass
+"""
+def simple_interest(principal, rate, time):
+    simple_interest = (principal * rate * time) / 100
+    return simple_interest
+
+print(calculate_simple_interest(1000, 5, 2))   
+print(calculate_simple_interest(5000, 7.5, 3)) 
+print(calculate_simple_interest(1200, 10, 1))  
 
 
-# 21
+
+
+
 def task21_calculator(a, b, operation):
     """
     Task 21:
