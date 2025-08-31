@@ -227,14 +227,19 @@ print("Outside the function:", message)
 
 
 # 14
+"""
 def task14_sum_list(numbers):
-    """
     Task 14:
     Write a function that accepts a list of numbers
     and returns the sum of all the elements in the list.
     Do not use Python's built-in sum() function.
     """
-    pass
+def list_sum(numbers):
+    total = 0
+    for num in numbers:
+        total += num
+    return total
+print(list_sum(34, 23, 78, 12))
 
 
 # 15
@@ -244,7 +249,7 @@ def task15_average_of_list(numbers):
     Write a function that accepts a list of numbers
     and returns the average.
     Formula: average = sum of numbers / count of numbers
-   pass
+    pass
 """
 def average_of_list(numbers):
     if len(numbers) == 0:
@@ -287,11 +292,11 @@ def palindrom_check(word):
     word = word.lower()
     return word == word[::-1]
 
-print(palindrom_check(tundeednut))
-print(palindrom_check(madam))
-print(palindrom_check(pad))
-print(palindrom_check(racecar))
-print(palindrom_check(level))
+print(palindrom_check("tundeednut"))
+print(palindrom_check("madam"))
+print(palindrom_check("pad"))
+print(palindrom_check("racecar"))
+print(palindrom_check("level"))
 
 
 # 18
@@ -352,34 +357,53 @@ print(calculate_simple_interest(1000, 5, 2))
 print(calculate_simple_interest(5000, 7.5, 3)) 
 print(calculate_simple_interest(1200, 10, 1))  
 
+#21
+"""
+Task 21:
+Write a function that works like a simple calculator.
+It should accept two numbers and an operation (+, -, *, /)
+and return the result.
+Example: calculator(4, 2, "+") → 6
+"""
+def simple_calculator(a, b):
+    if operation == "+":
+        return a + b
+    elif operation == "-":
+        return a - b
+    elif operation == "*":
+        return a * b
+    elif operation == "/":
+        if b == 0:
+            return "Error: Division by zero is not allowed"
+        return a / b
+    else:
+        return "Error: Invalid operation"
+
+print(calculator(13, 2, "+")) 
+print(calculator(1, 2, "-")) 
+print(calculator(7, 2, "*")) 
+print(calculator(10, 2, "/")) 
 
 
-
-
-def task21_calculator(a, b, operation):
-    """
-    Task 21:
-    Write a function that works like a simple calculator.
-    It should accept two numbers and an operation (+, -, *, /)
-    and return the result.
-    Example: calculator(4, 2, "+") → 6
-    """
-    pass
-
-
-# 22
-def task22_string_length(text):
+# task22_string_length(text):
     """
     Task 22:
     Write a function that accepts a string
     and returns its length without using len().
-    """
     pass
+"""
+def string_length(text):
+    count = 0
+    for _ in text
+        count =+ 1
+    return count
+print(string_length("sesko"))
+print(string_length("goat Ronaldo"))
 
 
 # 23
+"""
 def task23_grade_student(score):
-    """
     Task 23:
     Write a function that accepts a score (0–100)
     and returns the grade based on this scale:
@@ -389,23 +413,44 @@ def task23_grade_student(score):
     D: 40–49
     E: 30–39
     F: 0–29
-    """
     pass
-
+"""
+def grade_student(score):
+    if score < 0 or score > 100:
+        return "Invalid score"
+    elif score >= 70:
+        return "A"
+    elif score >= 60:
+        return "B"
+    elif score >= 50:
+        return "C"
+    elif score >= 40:
+        return "D"
+    elif score >= 30:
+        return "E"
+    else:
+        return "F"
+print(grade_student(67))
+print(grade_student(99))
+print(grade_student(89))
+print(grade_student(-23))
 
 # 24
+"""
 def task24_swap_values(a, b):
-    """
-    Task 24:
-    Write a function that accepts two values
-    and returns them swapped.
-    Example: swap_values(3, 7) → (7, 3)
-    """
-    pass
-
+Task 24:
+Write a function that accepts two values
+and returns them swapped.
+Example: swap_values(3, 7) → (7, 3)
+pass
+"""
+def swap_values(a, b):
+    return b, a
+print(swap_values(56, 56))
+print(swap_values(56, 34))
+print(swap_values(69, 96))
 
 # 25
-def task25_scope_counter():
     """
     Task 25:
     Create a counter function that uses a global variable.
@@ -413,7 +458,13 @@ def task25_scope_counter():
     the counter by 1 and print the current count.
     This demonstrates modifying global variables inside functions.
     """
-    pass
+def scope_counter():
+    global counter   # tell Python we want to modify the global variable
+    counter += 1
+    print("Current count:", counter)
+print(increment_counter())  
+print(increment_counter())
+print(increment_counter()) 
 
 
 # ================================
@@ -421,31 +472,48 @@ def task25_scope_counter():
 # ================================
 
 # 26
-def task26_calculate_bmi(weight, height):
+#def task26_calculate_bmi(weight, height):
     """
     Task 26:
     Write a function that accepts weight (kg) and height (m),
     and returns the Body Mass Index (BMI).
     Formula: BMI = weight / (height^2)
     Round the result to 2 decimal places.
-    """
     pass
+"""
+def calculate_bmi(weight, height):
+    if height <= 0:
+        return "Error: Height must be greater than 0"
+    bmi = weight / (height ** 2)
+    return round(bmi, 2)
+print(calculate_bmi(56, 6.4)
+print(calculate_bmi(79, 5.7)
 
 
 # 27
+"""
 def task27_discounted_price(price, discount_percent):
-    """
     Task 27:
     Write a function that accepts an item's price and discount percentage,
     and returns the final price after discount.
     Example: discounted_price(1000, 20) → 800
-    """
     pass
+"""
+def discounted_price(price, discounted_percent):
+    if discount_percent < 0 or discount_percent > 100:
+        return "Error: Discount must be between 0 and 100"
+    
+    discount_amount = (price * discount_percent) / 100
+    final_price = price - discount_amount
+    return final_price
+print(discounted_price(1000, 18)) 
+print(discounted_price(500, 50)) 
+print(discounted_price(200, 12)) 
 
 
 # 28
+"""
 def task28_movie_ticket_price(age):
-    """
     Task 28:
     Write a function that determines ticket price based on age:
     - Age < 12: 500
@@ -454,28 +522,54 @@ def task28_movie_ticket_price(age):
     - Age >= 60: 600
     Return the ticket price.
     """
-    pass
-
+def movie_ticket_price(age):
+    if age < 12:
+        price = 500
+    elif age < 18:
+        price = 700
+    elif age < 60:
+        price = 1000
+    else:
+        price = 600
+    
+    return f"Your ticket price is {price}"
+print(ticket_price(18))   
+print(ticket_price(22))  
+print(ticket_price(10))  
+print(ticket_price(65))  
 
 # 29
+"""
 def task29_shopping_total(prices):
-    """
     Task 29:
     Write a function that accepts a list of item prices
     and returns the total cost of all items.
-    """
     pass
+"""
+def shopping_total(prices)
+    total = 0
+    for price in prices:
+        total += price
+    return f"The total cost is {total}"
+print(total_cost([200, 300, 150]))   
+print(total_cost([1000, 2500, 500])) 
+print(total_cost([]))                
 
 
 # 30
+"""
 def task30_convert_to_seconds(hours, minutes, seconds):
-    """
     Task 30:
     Write a function that accepts hours, minutes, and seconds
     and converts the entire time to total seconds.
     Example: 1h 1m 1s → 3661 seconds
     """
-    pass
+def convert_to_second(hours, minutes, seconds): 
+    total_seconds = (hours * 3600) + (minutes * 60) + seconds
+    return f"The total time in seconds is {total_seconds}"
+print(time_to_seconds(4, 1, 1))   
+print(time_to_seconds(1, 30, 0))  
+print(time_to_seconds(0, 45, 15)) 
 
 
 # 31
